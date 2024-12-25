@@ -10,17 +10,30 @@ import java.util.Set;
 public class Homework {
 
     public static void main(String[] args) {
+        System.out.println("Задание 1: Перевернуть строку");
         turnString("I love Java");
+        System.out.println("\n");
 
+        System.out.println("Задание 2: Удалить дубликаты из массива");
         int[] ints = {1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9};
         getDistinctNumbers(ints);
+        System.out.println("\n");
 
-        System.out.println();
+        System.out.println("Задание 3: Найти второй по величине элемент в массиве");
         int[] arr = {10, 15, 23, 11, 44, 13, 66, 1, 6, 47};
-        System.out.println(findSecondMaxElement(arr));
+        System.out.print(findSecondMaxElement(arr));
+        System.out.println("\n");
 
+        System.out.println("Задание 4: Найти длину последнего слова");
         System.out.println("Hello world - " + lengthOfLastWord("Hello world"));
         System.out.println("    fly me    to the moon    " + " - " + lengthOfLastWord("    fly me    to the moon    "));
+        System.out.println("\n");
+
+        System.out.println("Задание 5: Проверить, является ли строка палиндромом");
+        System.out.println("abc - " + isPalindrome("abc"));
+        System.out.println("112233 - " + isPalindrome("112233"));
+        System.out.println("aba - " + isPalindrome("aba"));
+        System.out.println("112211 - " + isPalindrome("112211"));
     }
 
     // Перевернуть строку и вывести на консоль
@@ -48,7 +61,6 @@ public class Homework {
         }
 
 //        Если нужно просто вывести уникальные значения
-        System.out.println();
         for (int number: set) {
             System.out.print(number + " ");
         }
@@ -95,6 +107,16 @@ public class Homework {
     // aba - true
     // 112211 - true
     public static boolean isPalindrome(String string) {
-        return false;
+        int left = 0;
+        int right = string.length() - 1;
+
+        while (left < right) {
+            if (string.charAt(left) != string.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 }

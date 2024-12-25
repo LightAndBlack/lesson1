@@ -18,6 +18,9 @@ public class Homework {
         System.out.println();
         int[] arr = {10, 15, 23, 11, 44, 13, 66, 1, 6, 47};
         System.out.println(findSecondMaxElement(arr));
+
+        System.out.println("Hello world - " + lengthOfLastWord("Hello world"));
+        System.out.println("    fly me    to the moon    " + " - " + lengthOfLastWord("    fly me    to the moon    "));
     }
 
     // Перевернуть строку и вывести на консоль
@@ -74,7 +77,14 @@ public class Homework {
     // "Hello world" - 5
     // "    fly me    to the moon    " - 4
     public static Integer lengthOfLastWord(String string) {
-        return null;
+        String[] words = string.trim().split("\\s+");
+
+        if (words.length > 0) {
+            return words[words.length - 1].length();
+        }
+        else {
+            return 0;
+        }
     }
 
     // Определить, что строка является палиндромом

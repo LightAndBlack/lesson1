@@ -2,10 +2,18 @@ package com.aston.javabase;
 
 import com.aston.javabase.class_loaders.ClassLoaders;
 
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Homework {
 
     public static void main(String[] args) {
         turnString("I love Java");
+
+        int[] ints = {1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9};
+        getDistinctNumbers(ints);
     }
 
     // Перевернуть строку и вывести на консоль
@@ -20,6 +28,23 @@ public class Homework {
     // int[] ints = {1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9};
     // Удалить дубликаты из массива и вывести в консоль
     public static void getDistinctNumbers(int[] ints) {
+        Set<Integer> set = new HashSet<>();
+        for (int number: ints) {
+            set.add(number);
+        }
+
+//        Если нужно снова преобразовать в массив
+        int[] newArray = new int[set.size()];
+        int i = 0;
+        for (int number: set) {
+            newArray[i++] = number;
+        }
+
+//        Если нужно просто вывести уникальные значения
+        System.out.println();
+        for (int number: set) {
+            System.out.print(number + " ");
+        }
     }
 
     // Дан массив, заполненный уникальными значениями типа int.
